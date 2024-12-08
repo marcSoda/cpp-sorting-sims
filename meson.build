@@ -1,5 +1,16 @@
 project('sorting_visualization', 'cpp', version: '1.0', default_options: ['cpp_std=c++20'])
 
+cpp_args = [
+  '-I/usr/include/c++/13',
+  '-I/usr/include/x86_64-linux-gnu/c++/13',
+  '-I/usr/include/c++/13/backward',
+  '-I/usr/lib/gcc/x86_64-linux-gnu/13/include',
+  '-I/usr/include/x86_64-linux-gnu',
+  '-I/usr/include'
+]
+
+add_project_arguments(cpp_args, language: 'cpp')
+
 # Include directories
 inc = include_directories('include')
 
@@ -23,3 +34,4 @@ executable(
   dependencies: [raylib_dep],
   install: false,
 )
+
